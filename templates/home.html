@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center">
+		<h1>Welcome to Face Recognition Attendance System</h1>
+		<p class="lead">This application is built on the python framework for the attendance system using openCV python lib</p>
+	</div>
+	<div class="container">
+		<div class="card-deck">
+			<div class="card" style="width: 20rem;">
+			  <img src="/static/attendance.png" class="img-fluid" width="200" height="200" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h3 class="card-title">For Attendance</h3>
+			    <p class="card-text">This will redirect to the page where you can use the system of facial recognition.</p>
+			    <a href="/attendance" class="btn btn-primary">Attendance</a>
+			  </div>
+			</div>
+<!-- 			<div class="card" style="width: 20rem;">
+			  <img src="/static/records.png" class="img-fluid" width="200" height="200" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h3 class="card-title">For Records</h3>
+			    <p class="card-text">This will redirect to the page where you can see the records of the students.</p>
+			    <a href="/records" class="btn btn-primary">Records</a>
+			  </div>
+			</div>
+	</div>
+	</div> -->
+{% endblock %}

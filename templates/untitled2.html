@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block body %}
+	<div class="jumbotron text-center">
+		<h1>Attendance System</h1>
+		<p class="lead">Place your face within the camera frame for attendance.</p>
+	</div>
+	<div class="container">
+		<div class="card-deck">
+			<div class="card" style="width: 18rem;">
+			  <img src="{{ url_for('video_feed') }}">
+			  <div class="card-body">
+			    <h5 class="card-title">Camera</h5>
+			    <p class="card-text">Place yourself in the frame and click on the button below.</p>
+			    <div id="container" style="margin: 0px auto;width: 375px;height: 375px;border: 10px #333 solid;">
+					<video autoplay="true" id="videoElement" style="width: 355px;height: 355px;background-color: #666;">
+	
+					</video>
+					<a href="#" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px;
+					margin-bottom: 10px; text-align: center">Take attendance</a>
+				</div>
+				<script src="/static/cam.js" charset="utf-8">
+				</script>
+			  </div>
+			</div>
+
+
+			<div class="card" style="width: 18rem;">
+			  <img src="..." class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Student Information</h5>
+			    <p class="card-text">Information of the student registered recently.</p>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div style="padding-top: 20px; padding-bottom: 50px">
+		<a href="/new_entry" class="btn btn-secondary btn-lg btn-block">Add new record</a>
+	</div>
+{% endblock %}

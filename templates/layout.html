@@ -1,0 +1,19 @@
+<!DOCTYPE>
+<HTML>
+	<HEAD>
+		<TITLE>
+			Attendance System
+		</TITLE>
+		<link rel="shortcut icon" href="{{url_for('static', filename = 'A_icon.ico')}}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	</HEAD>
+	<BODY>
+		{% include 'includes/_navbar.html' %}
+		<div class="container">
+			{% block body %} 
+
+			{% endblock %}
+		</div>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	</BODY>
+</HTML>

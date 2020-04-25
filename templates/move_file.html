@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body %}
+	<div class="jumbotron text-center">
+		<h1>Student information</h1>
+		<p class="lead">Recognized student's data</p>
+	</div>
+	<div class="container">
+		<div class="card-deck">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+			    	<h5 class="card-title">Attendance taken for:</h5>
+			    	<p class="card-text">Name: {{my_string}}</p>
+			    	<p class="card-text">Time: {{my_time}}</p>
+			    	<p class="card-text">Date: {{my_date}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
