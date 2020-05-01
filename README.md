@@ -5,7 +5,8 @@ You should have python-3 or above in your local machine.
 
 REQUIRED: 
 for pip package manager:
-1.open-CV
+
+1.open-CV:
   pip install opencv-
 	
 2.FLask
