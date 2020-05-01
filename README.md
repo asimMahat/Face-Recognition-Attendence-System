@@ -7,15 +7,15 @@ REQUIRED:
 for pip package manager:
 
 1.open-CV:
-  pip install opencv-
+  pip install opencv-python
 	
-2.FLask
+2.FLask:
   pip install flask
 	
-3.numpy
+3.numpy:
   pip install numpy
 	
-4.pickle
+4.pickle:
  sudo pip install pil
  
 
