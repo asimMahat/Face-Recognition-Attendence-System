@@ -92,16 +92,16 @@ def move_file():
         # cv2.rectangle(frame,(x,y),(width,height),color,stroke)
     logDf.to_csv(fileName,index=False)
     return render_template('move_file.html',my_string=final_face,my_time=time,my_date=t_date)
+    
 # @app.route('/get_image')
 # def get_image():
 #       image = flask.request.args.get('download_image')
 #       print("Image aayo")
 
 
-''' 
-@app.route('/new_entry')
-def new_entry():
-    return render_template('new_entry.html')
+# @app.route('/new_entry')
+# def new_entry():
+#     return render_template('new_entry.html')
 
 def gen():
     img = cv2.imread('lizard.jpg')
@@ -115,9 +115,6 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 #running the file
-
-'''
-
 
 if __name__ == '__main__':
     app.run(debug=True)
