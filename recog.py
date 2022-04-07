@@ -1,13 +1,11 @@
 
-# Importing necessary modules
-
-import numpy as np
 import cv2
 import os
+import numpy as np
 import pickle
 
 #Using haar cascade classifier for frontal face recognition
-face_cascade=cv2.CascadeClassifier('src\data\haarcascade_frontalface_alt2.xml')
+face_cascade=cv2.CascadeClassifier('src/data/haarcascade_frontalface_alt2.xml')
 
 # print(os.listdir('src\data'))
 #Implementing the opencv recognizer
@@ -22,12 +20,9 @@ with open("labels.pickle",'rb')as f:
     og_labels=pickle.load(f)
     labels={v:k for k,v in og_labels.items()}
 
-#Using videocapture function to capture the video using an external USB webcam and setting into
-the cap variable
-
-cap=cv2.VideoCapture(0)
-# cap.set(cv2.CV_CAP_PROP_FPS, 60)
-
+#Using videocapture function to capture the video using an external USB webcam 
+ 
+cap = cv2.VideoCapture(0)
 
 while (True):
     ret,frame=cap.read()    

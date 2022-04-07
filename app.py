@@ -1,27 +1,22 @@
-#this main python script consists parts flask and opencv to get the final output 
-
-#importing necessary modules
-
 from flask import Flask, render_template, Response, request
-from camera import Camera
 import cv2
 import os
 import pandas as pd
-from datetime import datetime 
 import numpy as np
+
+from datetime import datetime
 import pickle
+from camera import Camera
 
 # Using haar cascade classifier for frontal face recognition
 face_cascade=cv2.CascadeClassifier('src/data/haarcascade_frontalface_alt2.xml')
-
-# print(os.listdir('src\data'))
-
-#  Creating the opencv LBPH(linear binary pattern historgram) recognizer
+ 
+# Creating the opencv LBPH(linear binary pattern historgram) recognizer
 recognizer=cv2.face.LBPHFaceRecognizer_create()
 
 # using the trained log obtained by training 'face_train.py'
 
-recognizer.read("train1.yml")
+recognizer.read("trained_logs/train1.yml")
 font=cv2.FONT_HERSHEY_SIMPLEX 
 color=(255,0,0)
 stroke=2
@@ -48,10 +43,8 @@ def attendance():
     return render_template('attendance.html')
 
 
-
 @app.route('/move_file')
 def move_file():
-    # print("alakazam")
     d = datetime.now()
     fileName = str(d.year)+"_"+str(d.month)+"_"+str(d.day)+".csv"
     t_date = str(d.year)+"/"+str(d.month)+"/"+str(d.day)
@@ -61,6 +54,7 @@ def move_file():
         logDf = pd.DataFrame(columns=["Time","Name"])
 
     #getting the ss from the directory
+
     os.system("mv ~/Downloads/screenshot.jpg ./")
     frame = cv2.imread("screenshot.jpg")
     gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
@@ -103,6 +97,8 @@ def move_file():
 #       image = flask.request.args.get('download_image')
 #       print("Image aayo")
 
+
+''' 
 @app.route('/new_entry')
 def new_entry():
     return render_template('new_entry.html')
@@ -110,7 +106,7 @@ def new_entry():
 def gen():
     img = cv2.imread('lizard.jpg')
     img = cv2.resize(img, (0,0), fx=1.0, fy=1.0)
-    frame = cv2.imencode('.jpg',img)[1].tobytes()
+    frame = cv2.imencode('.jpg',img)[1].tobytes() # Encodes an image into a memory buffer.
     yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 @app.route('/video_feed')
@@ -119,6 +115,9 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 #running the file
+
+'''
+
 
 if __name__ == '__main__':
     app.run(debug=True)
